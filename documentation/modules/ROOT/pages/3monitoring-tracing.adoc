@@ -11,6 +11,10 @@ NOTE: You may want to push some load onto the deployed applications in order to 
 [source,bash,subs="+macros,+attributes"]
 ----
 ifdef::workshop[]
+oc project istio-system
+or
+kubectl config set-context $(kubectl config current-context) --namespace=istio-system
+
 open http://grafana-istio-system.{appdomain}/d/1/istio-dashboard?refresh=5s&orgId=1
 or
 firefox http://grafana-istio-system.{appdomain}/d/1/istio-dashboard?refresh=5s&orgId=1
